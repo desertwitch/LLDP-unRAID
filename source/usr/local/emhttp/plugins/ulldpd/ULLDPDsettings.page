@@ -33,7 +33,7 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
     <dl>
         <dt>
             <input id="DEFAULT" class="ulldpd-run" type="submit" name="#default" value="Default">
-            <input id="SHOWNBS" class="ulldpd-run" type="button" value="Show Neighbors">
+            <input id="SHOWNBS" type="button" value="Show Neighbors">
         </dt>
         <dd>
             <input type="submit" id="btnApply" name="#apply" value="Apply">
@@ -59,9 +59,11 @@ function checkRUNNING(){
     if ("<?=$ulldpd_running;?>" == 1){
         $('.ulldpd-run').prop('disabled', true);
         $('#RESTART').prop('disabled', false);
+        $('#SHOWNBS').prop('disabled', false);
     }else{
         $('.ulldpd-run').prop('disabled', false);
         $('#RESTART').prop('disabled', true);
+        $('#SHOWNBS').prop('disabled', true);
     }
 }
 function Restart() {
