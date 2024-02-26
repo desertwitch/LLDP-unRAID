@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Restarting LLDP service..."
+/etc/rc.d/rc.lldpd restart | logger

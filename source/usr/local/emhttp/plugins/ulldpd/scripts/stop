@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Stopping LLDP service..."
+/etc/rc.d/rc.lldpd stop | logger

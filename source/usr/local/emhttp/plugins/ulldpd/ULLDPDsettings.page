@@ -1,0 +1,82 @@
+Menu="NetworkServices"
+Type="xmenu"
+Title="LLDP"
+Icon="podcast"
+Tag="cog"
+Markdown="false"
+---
+<?PHP
+require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
+?>
+
+<span style="float:right;margin-right:10px"><a href="" target="_blank" title="LLDP Support Thread"><i class="fa fa-medkit"></i> <u>Support Thread</u></a></span>
+
+<form markdown="0" id="ulldpd-settings" name="ulldpd_settings" method="POST" action="/update.php" target="progressFrame">
+    <input type="hidden" name="#file" value="ulldpd/ulldpd.cfg">
+    <input type="hidden" id="command" name="#command" value="" />
+
+    <dl>
+        <dt>Start LLDP Service:</dt>
+        <dd>
+            <select id="SERVICE" name="SERVICE" class="ulldpd-run" size="1">
+                <?=mk_option($ulldpd_service, "disable", "No");?>
+                <?=mk_option($ulldpd_service, "enable", "Yes");?>
+            </select>
+        </dd>
+    </dl>
+
+    <blockquote class="inline_help">
+        <p>Set to <strong>'Yes'</strong> to enable and start LLDP service at system boot.</p>
+        <p>Set to <strong>'No'</strong> to disable and stop LLDP service at system boot.</p>
+    </blockquote>
+
+    <dl>
+        <dt>
+        </dt>
+        <dd>
+            <input type="submit" id="btnApply" name="#apply" value="Apply">
+            <input type="button" value="Done" onclick="done()">
+            <input id="RESTART" type="button" value="Restart LLDP" style="margin-bottom:8px;">
+        </dd>
+    </dl>
+</form>
+
+<script>
+function checkRUNNING(){
+    if ($('#SERVICE').val() === 'enable')
+        $('#command').val('/usr/local/emhttp/plugins/ulldpd/scripts/start');
+    else
+        $('#command').val('/usr/local/emhttp/plugins/ulldpd/scripts/stop');
+    if ("<?=$ulldpd_running;?>" == 1){
+        $('.ulldpd-run').prop('disabled', true);
+        $('#RESTART').prop('disabled', false);
+    }else{
+        $('.ulldpd-run').prop('disabled', false);
+        $('#RESTART').prop('disabled', true);
+    }
+}
+function Restart() {
+    $('#command').val('/usr/local/emhttp/plugins/ulldpd/scripts/restart');
+}
+$(function() {
+    $('#btnApply').click(function(){
+        $('#ulldpd-settings').submit();
+    });
+
+    $('#SERVICE').change(checkRUNNING);
+    
+    $('#RESTART').click(Restart);
+
+    checkRUNNING();
+
+    showStatus('lldpd');
+
+    // dynamix plugin update api
+    <?if (function_exists('plugin_update_available') && $version = plugin_update_available('ulldpd')):?>
+        showNotice('LLDP <?=htmlspecialchars($version);?> available. <a>Update</a>','nafp');
+        $('#user-notice a').on('click', function () {
+        $('#user-notice').empty();
+    });
+    <?endif;?>
+});
+</script>
