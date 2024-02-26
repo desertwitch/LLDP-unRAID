@@ -57,7 +57,7 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
 
     <blockquote class="inline_help">
         <p>Force to send LLDP packets even when there is no LLDP peer detected but there is a peer speaking another protocol detected.</p>
-        <p>By default (= 'No'), LLDP packets are sent when there is a peer speaking LLDP detected or when there is no peer at all.</p>
+        <p>By default (= <strong>'No'</strong>), LLDP packets are sent when there is a peer speaking LLDP detected or when there is no peer at all.</p>
     </blockquote>
 
     <dl>
