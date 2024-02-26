@@ -33,6 +33,7 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
     <dl>
         <dt>
             <input id="DEFAULT" class="ulldpd-run" type="submit" name="#default" value="Default">
+            <input id="SHOWNBS" class="ulldpd-run" type="button" value="Show Neighbors">
         </dt>
         <dd>
             <input type="submit" id="btnApply" name="#apply" value="Apply">
@@ -41,6 +42,13 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
         </dd>
     </dl>
 </form>
+
+<?if ($ulldpd_running):?>
+<table class="tablesorter">
+<thead><tr><th>Currently Propagated Information</th></tr></thead>
+<tbody id="ulldpd_summary"><tr><td><pre><?=shell_exec("/usr/sbin/lldpcli show chassis 2>/dev/null");?></pre></td></tr></tbody>
+</table>
+<?endif;?>
 
 <script>
 function checkRUNNING(){
@@ -59,6 +67,9 @@ function checkRUNNING(){
 function Restart() {
     $('#command').val('/usr/local/emhttp/plugins/ulldpd/scripts/restart');
 }
+function ShowNBS() {
+    openBox('/plugins/nut/scripts/shownbs', 'LLDP Neighborhood', 600, 600, false);
+}
 $(function() {
     $('#btnApply').click(function(){
         $('#ulldpd-settings').submit();
@@ -67,6 +78,7 @@ $(function() {
     $('#SERVICE').change(checkRUNNING);
     
     $('#RESTART').click(Restart);
+    $('#SHOWNBS').click(ShowNBS);
 
     checkRUNNING();
 
