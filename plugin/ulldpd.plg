@@ -55,10 +55,10 @@ if [ -e "$CONFIG" ]; then
     source "$CONFIG"
 fi
 
-echo "Determining if LLDP services should be started..."
+echo "Determining if LLDP service should be started..."
 
 if [ "$SERVICE" == "enable" ]; then
-    echo "Starting LLDP services..."
+    echo "Starting LLDP service..."
     /etc/rc.d/rc.lldpd start
 fi
 
