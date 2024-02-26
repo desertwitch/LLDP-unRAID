@@ -1,6 +1,6 @@
 Menu="NetworkServices"
 Type="xmenu"
-Title="LLDP"
+Title="LLDP Service"
 Icon="podcast"
 Tag="cog"
 Markdown="false"
