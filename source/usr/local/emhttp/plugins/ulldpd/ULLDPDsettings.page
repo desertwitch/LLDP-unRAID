@@ -16,7 +16,7 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
     <input type="hidden" id="command" name="#command" value="" />
 
     <dl>
-        <dt>Start LLDP Service:</dt>
+        <dt><strong>Start LLDP Service:</strong></dt>
         <dd>
             <select id="SERVICE" name="SERVICE" size="1">
                 <?=mk_option($ulldpd_service, "disable", "No");?>
