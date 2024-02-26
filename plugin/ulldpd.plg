@@ -47,6 +47,21 @@ run the post-installation scripts
 # Cleaning old plugin source files
 find &plgPATH;/ -type f -iname "&name;*.txz" ! -iname "*&plgNAME;*" -delete
 
+CONFIG=&plgPATH;/&name;.cfg
+
+# reading our configuration
+echo "Reading LLDP configuration..."
+if [ -e "$CONFIG" ]; then
+    source "$CONFIG"
+fi
+
+echo "Determining if LLDP services should be started..."
+
+if [ "$SERVICE" == "enable" ]; then
+    echo "Starting LLDP services..."
+    /etc/rc.d/rc.lldpd start
+fi
+
 echo ""
 echo "-------------------------------------------------------------"
 echo " LLDP for UNRAID (&version;) has been installed."
