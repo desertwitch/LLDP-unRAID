@@ -10,7 +10,7 @@
 <!ENTITY pkgURL    "&gitURL;/packages">
 <!ENTITY plgPATH   "/boot/config/plugins/&name;">
 <!ENTITY plgNAME   "ulldpd-2024.02.26-x86_64-1">
-<!ENTITY plgMD5    "184240dd91af55fcf2afa67cca342485">
+<!ENTITY plgMD5    "7f77d786b95115d3f9c4770ca9dc57a3">
 <!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
 ]>
 
