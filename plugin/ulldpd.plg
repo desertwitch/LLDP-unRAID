@@ -43,7 +43,10 @@ install or upgrade the plugin itself
 run the post-installation scripts
 -->
 <FILE Run="/bin/bash">
-<INLINE> 
+<INLINE>
+echo "Making sure all existing LLDP instances are stopped (before install/upgrade)..."
+killall lldpd
+
 # Cleaning old plugin source files
 find &plgPATH;/ -type f -iname "&name;*.txz" ! -iname "*&plgNAME;*" -delete
 
@@ -75,9 +78,10 @@ definition for uninstallation of the plugin
 -->
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
+echo "Making sure all existing LLDP instances are stopped (before uninstall)..."
 killall lldpd
-removepkg &plgPATH;/*.txz
 
+removepkg &plgPATH;/*.txz
 rm -rf &plgPATH;
 rm -rf &emhttp;
 
