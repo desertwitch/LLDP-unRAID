@@ -28,7 +28,7 @@ install or upgrade dependency files
 -->
 <FILE Name="&plgPATH;/lldpd-1.0.18-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
 <URL>&pkgURL;/lldpd-1.0.18-x86_64-1.txz</URL>
-<MD5>ee6faed64a010ae997c9967b55c927b5</MD5>
+<MD5>8a990c707220e8aa2970dc11f2321223</MD5>
 </FILE>
 
 <!--

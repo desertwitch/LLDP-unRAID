@@ -16,6 +16,13 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
     <input type="hidden" id="command" name="#command" value="" />
 
     <dl>
+        <dt>LLDP Backend:</dt>
+        <dd>
+	        <strong><?= isset($ulldpd_installed_backend) && $ulldpd_installed_backend ? $ulldpd_installed_backend : "n/a" ?></strong>
+        </dd>
+    </dl>
+
+    <dl>
         <dt>Start LLDP Service:</dt>
         <dd>
             <select id="SERVICE" name="SERVICE" size="1">
