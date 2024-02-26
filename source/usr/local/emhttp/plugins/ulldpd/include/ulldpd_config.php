@@ -1,6 +1,7 @@
 <?
 $ulldpd_cfg          = parse_ini_file("/boot/config/plugins/ulldpd/ulldpd.cfg");
 $ulldpd_service      = isset($ulldpd_cfg['SERVICE'])      ? htmlspecialchars($ulldpd_cfg['SERVICE'])       : 'disable';
+$ulldpd_force = isset($ulldpd_cfg['FORCE'])      ? htmlspecialchars($ulldpd_cfg['FORCE'])       : 'disable';
 $ulldpd_cdp = isset($ulldpd_cfg['CDP'])      ? htmlspecialchars($ulldpd_cfg['CDP'])       : 'disable';
 $ulldpd_fdp = isset($ulldpd_cfg['FDP'])      ? htmlspecialchars($ulldpd_cfg['FDP'])       : 'disable';
 $ulldpd_sonmp = isset($ulldpd_cfg['SONMP'])      ? htmlspecialchars($ulldpd_cfg['SONMP'])       : 'disable';
