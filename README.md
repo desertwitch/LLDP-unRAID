@@ -4,4 +4,4 @@ _A plugin that integrates a Link Layer Discovery Protocol service into UNRAID sy
 
 Copyrights UNRAID Plugin System: Dan Landon, Bergware International, Lime Technology
 
-This project continues to be licensed under ISC, GPL2 and/or GPL3 (where applicable, see respective file header).
+This project continues to be licensed under ISC, GPL2 and/or GPL3 (where applicable).
