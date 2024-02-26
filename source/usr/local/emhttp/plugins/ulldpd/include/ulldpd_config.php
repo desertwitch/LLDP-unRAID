@@ -1,4 +1,22 @@
-<?
+<?PHP
+/* Copyright Derek Macias (parts of code from NUT package)
+ * Copyright macester (parts of code from NUT package)
+ * Copyright gfjardim (parts of code from NUT package)
+ * Copyright SimonF (parts of code from NUT package)
+ * Copyright desertwitch
+ *
+ * Copyright Dan Landon
+ * Copyright Bergware International
+ * Copyright Lime Technology
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 2
+ * as published by the Free Software Foundation.
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ */
 $ulldpd_cfg          = parse_ini_file("/boot/config/plugins/ulldpd/ulldpd.cfg");
 $ulldpd_service      = isset($ulldpd_cfg['SERVICE'])      ? htmlspecialchars($ulldpd_cfg['SERVICE'])       : 'disable';
 $ulldpd_force = isset($ulldpd_cfg['FORCE'])      ? htmlspecialchars($ulldpd_cfg['FORCE'])       : 'disable';
