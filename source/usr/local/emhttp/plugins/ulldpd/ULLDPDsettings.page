@@ -45,7 +45,7 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
 
 <?if ($ulldpd_running):?>
 <table class="tablesorter">
-<thead><tr><th>Currently Propagated Information</th></tr></thead>
+<thead><tr><th>Propagated Information</th></tr></thead>
 <tbody id="ulldpd_summary"><tr><td><pre><?=shell_exec("/usr/sbin/lldpcli show chassis 2>/dev/null");?></pre></td></tr></tbody>
 </table>
 <?endif;?>
@@ -70,7 +70,7 @@ function Restart() {
     $('#command').val('/usr/local/emhttp/plugins/ulldpd/scripts/restart');
 }
 function ShowNBS() {
-    openBox('/plugins/nut/scripts/shownbs', 'LLDP Neighborhood', 600, 600, false);
+    openBox('/usr/local/emhttp/plugins/ulldpd/scripts/shownbs', 'LLDP Neighbors', 600, 600, false);
 }
 $(function() {
     $('#btnApply').click(function(){
