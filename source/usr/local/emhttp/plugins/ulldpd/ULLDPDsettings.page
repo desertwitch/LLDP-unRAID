@@ -9,7 +9,7 @@ Markdown="false"
 require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
 ?>
 
-<span style="float:right;margin-right:10px"><a href="https://forums.unraid.net/topic/155553-lldp-for-unraid-610-support-topic/" target="_blank" title="LLDP Support Thread"><i class="fa fa-medkit"></i> <u>Support Thread</u></a></span>
+<span style="float:right;margin-right:10px"><a href="https://forums.unraid.net/topic/155553-plugin-lldp-for-unraid-610-support-topic/" target="_blank" title="LLDP Support Thread"><i class="fa fa-medkit"></i> <u>Support Thread</u></a></span>
 
 <div>
 <div>LLDP allows you to know exactly on which port is a server (and reciprocally).</div>

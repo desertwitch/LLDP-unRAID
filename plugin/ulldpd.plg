@@ -14,7 +14,7 @@
 <!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
 ]>
 
-<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" support="https://forums.unraid.net/topic/155553-lldp-for-unraid-610-support-topic/" min="6.10.0">
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" support="https://forums.unraid.net/topic/155553-plugin-lldp-for-unraid-610-support-topic/" min="6.10.0">
 
 <CHANGES>
 ## LLDP for UNRAID
