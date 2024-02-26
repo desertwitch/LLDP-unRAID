@@ -38,7 +38,7 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
     </blockquote>
 
     <dl>
-        <dt>Enable Force LLDP Protocol:</dt>
+        <dt>Force LLDP Protocol:</dt>
         <dd>
             <select class="ulldpd-run" id="FORCE" name="FORCE" size="1">
                 <?=mk_option($ulldpd_force, 'disable', 'No');?>
