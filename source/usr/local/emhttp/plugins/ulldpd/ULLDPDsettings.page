@@ -11,6 +11,14 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
 
 <span style="float:right;margin-right:10px"><a href="" target="_blank" title="LLDP Support Thread"><i class="fa fa-medkit"></i> <u>Support Thread</u></a></span>
 
+<div>
+<div>LLDP allows you to know exactly on which port is a server (and reciprocally).</div>
+<div>LLDP is an industry standard protocol designed to supplant proprietary Link-Layer protocols such as EDP or CDP.</div>
+<div>The goal of LLDP is to provide an inter-vendor compatible mechanism to deliver Link-Layer notifications to adjacent network devices.</div>
+</div>
+
+<br>
+
 <form markdown="0" id="ulldpd-settings" name="ulldpd_settings" method="POST" action="/update.php" target="progressFrame">
     <input type="hidden" name="#file" value="ulldpd/ulldpd.cfg">
     <input type="hidden" id="command" name="#command" value="" />
@@ -23,7 +31,7 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
     </dl>
 
     <dl>
-        <dt>Start LLDP Service:</dt>
+        <dt><strong>Start LLDP Service:</strong></dt>
         <dd>
             <select id="SERVICE" name="SERVICE" size="1">
                 <?=mk_option($ulldpd_service, "disable", "No");?>
