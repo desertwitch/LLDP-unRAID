@@ -38,6 +38,62 @@ require_once '/usr/local/emhttp/plugins/ulldpd/include/ulldpd_config.php';
     </blockquote>
 
     <dl>
+        <dt>Enable CDP Protocol:</dt>
+        <dd>
+            <select class="ulldpd-run" id="CDP" name="CDP" size="1">
+                <?=mk_option($ulldpd_cdp, 'disable', 'No');?>
+                <?=mk_option($ulldpd_cdp, 'enable', 'Yes');?>
+            </select>
+        </dd>
+    </dl>
+
+    <blockquote class="inline_help">
+        <p>Enable the support of CDP protocol to deal with Cisco routers that do not speak LLDP.</p>
+    </blockquote>
+
+    <dl>
+        <dt>Enable FDP Protocol:</dt>
+        <dd>
+            <select class="ulldpd-run" id="FDP" name="FDP" size="1">
+                <?=mk_option($ulldpd_fdp, 'disable', 'No');?>
+                <?=mk_option($ulldpd_fdp, 'enable', 'Yes');?>
+            </select>
+        </dd>
+    </dl>
+
+    <blockquote class="inline_help">
+        <p>Enable the support of FDP protocol to deal with Foundry routers that do not speak LLDP.</p>
+    </blockquote>
+
+    <dl>
+        <dt>Enable SONMP Protocol:</dt>
+        <dd>
+            <select class="ulldpd-run" id="SONMP" name="SONMP" size="1">
+                <?=mk_option($ulldpd_sonmp, 'disable', 'No');?>
+                <?=mk_option($ulldpd_sonmp, 'enable', 'Yes');?>
+            </select>
+        </dd>
+    </dl>
+
+    <blockquote class="inline_help">
+        <p>Enable the support of SONMP protocol to deal with Nortel routers and switches that do not speak LLDP.</p>
+    </blockquote>
+
+    <dl>
+        <dt>Enable EDP Protocol:</dt>
+        <dd>
+            <select class="ulldpd-run" id="EDP" name="EDP" size="1">
+                <?=mk_option($ulldpd_edp, 'disable', 'No');?>
+                <?=mk_option($ulldpd_edp, 'enable', 'Yes');?>
+            </select>
+        </dd>
+    </dl>
+
+    <blockquote class="inline_help">
+        <p>Enable the support of EDP protocol to deal with Extreme routers and switches that do not speak LLDP.</p>
+    </blockquote>
+
+    <dl>
         <dt>
             <input id="DEFAULT" class="ulldpd-run" type="submit" name="#default" value="Default">
             <input id="SHOWNBS" type="button" value="Show Neighbors">
