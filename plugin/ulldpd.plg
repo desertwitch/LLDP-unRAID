@@ -56,9 +56,6 @@ run the post-installation scripts
 -->
 <FILE Run="/bin/bash">
 <INLINE>
-# Cleaning old plugin source files
-find &plgPATH;/ -type f -iname "&name;*.txz" ! -iname "*&plgNAME;*" -delete
-
 CONFIG=&plgPATH;/&name;.cfg
 
 # reading our configuration
@@ -73,6 +70,9 @@ if [ "$SERVICE" == "enable" ]; then
     echo "Starting LLDP service..."
     /etc/rc.d/rc.lldpd start
 fi
+
+# Cleaning old plugin source files
+find &plgPATH;/ -type f -iname "&name;*.txz" ! -iname "*&plgNAME;*" -delete
 
 echo ""
 echo "-------------------------------------------------------------"
