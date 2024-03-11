@@ -3,7 +3,7 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ulldpd">
 <!ENTITY author    "desertwitch">
-<!ENTITY version   "2024.02.26">
+<!ENTITY version   "2024.03.11">
 <!ENTITY launch    "Settings/ULLDPDsettings">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/LLDP-unRAID/main">
 <!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
@@ -22,6 +22,18 @@
 - release note: welcome to the first version of the LLDP package.
 - release note: please report any problems in the respective support topic.
 </CHANGES>
+
+<!--
+stop already existing services before doing anything
+-->
+<FILE Run="/bin/bash">
+<INLINE>
+echo "Making sure all existing LLDP services are stopped (before install/upgrade)..."
+killall lldpd
+echo ""
+exit 0
+</INLINE>
+</FILE>
 
 <!--
 install or upgrade dependency files
@@ -44,9 +56,6 @@ run the post-installation scripts
 -->
 <FILE Run="/bin/bash">
 <INLINE>
-echo "Making sure all existing LLDP instances are stopped (before install/upgrade)..."
-killall lldpd
-
 # Cleaning old plugin source files
 find &plgPATH;/ -type f -iname "&name;*.txz" ! -iname "*&plgNAME;*" -delete
 
@@ -70,6 +79,7 @@ echo "-------------------------------------------------------------"
 echo " LLDP for UNRAID (&version;) has been installed."
 echo " Copyright 2023 - &author;"
 echo "-------------------------------------------------------------"
+echo ""
 </INLINE>
 </FILE>
 
