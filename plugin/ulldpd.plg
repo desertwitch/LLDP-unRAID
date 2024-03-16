@@ -18,6 +18,8 @@
 
 <CHANGES>
 ## LLDP for UNRAID
+###2024.03.11
+- fix: moved around some statements in the installation and removal processes (no changes to packages)
 ###2024.02.26
 - release note: welcome to the first version of the LLDP package.
 - release note: please report any problems in the respective support topic.
