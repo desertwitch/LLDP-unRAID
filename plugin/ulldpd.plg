@@ -73,9 +73,6 @@ if [ "$SERVICE" == "enable" ]; then
     /etc/rc.d/rc.lldpd start
 fi
 
-# Cleaning old plugin source files
-find &plgPATH;/ -type f -iname "&name;*.txz" ! -iname "*&plgNAME;*" -delete
-
 echo ""
 echo "-------------------------------------------------------------"
 echo " LLDP for UNRAID (&version;) has been installed."
