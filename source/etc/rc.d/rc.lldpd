@@ -50,7 +50,7 @@ lldpd_start() {
   [ "$SONMP" == "enable" ] && PROTOSONMP="-s" || PROTOSONMP=""
   [ "$EDP" == "enable" ] && PROTOEDP="-e" || PROTOEDP=""
   echo "Starting LLDP service with parameters: $PROTOFORCE $PROTOCDP $PROTOFDP $PROTOSONMP $PROTOEDP"
-  /usr/sbin/lldpd $PROTOFORCE $PROTOCDP $PROTOFDP $PROTOSONMP $PROTOEDP >/dev/null 2>&1
+  /usr/sbin/lldpd -I "eth*" $PROTOFORCE $PROTOCDP $PROTOFDP $PROTOSONMP $PROTOEDP >/dev/null 2>&1
 }
 
 lldpd_stop() {
