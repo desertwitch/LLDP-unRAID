@@ -9,6 +9,6 @@ ulldpd:
 ulldpd: lldpd is an ISC-licensed implementation of LLDP for various Unixes. It
 ulldpd: also supports some proprietary protocols.
 ulldpd:
-ulldpd: compiled and packaged by desertwitch on Slackware 15.0 (x86_64)
+ulldpd: compiled and packaged by desertwitch on Slackware 15.1 (x86_64)
 ulldpd: intended for use on UNRAID installations WITHOUT ANY WARRANTIES
 ulldpd:

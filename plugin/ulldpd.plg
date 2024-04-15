@@ -18,6 +18,8 @@
 
 <CHANGES>
 ## LLDP for UNRAID
+###2024.04.15
+- fix: only propagate LLDP information on physical network interfaces (eth*) instead of all network interfaces
 ###2024.03.11
 - fix: moved around some statements in the installation and removal processes (no changes to packages)
 ###2024.02.26
