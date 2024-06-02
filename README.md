@@ -4,4 +4,4 @@ _A plugin that integrates a Link Layer Discovery Protocol service into UNRAID sy
 
 This project continues to be licensed under ISC, GPL2 and/or GPL3 (where applicable).
 
-LLDPD Source Code: https://github.com/lldpd/lldpd
+<sub>lldpd Source Code: https://github.com/lldpd/lldpd</sub>
