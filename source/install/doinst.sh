@@ -26,8 +26,8 @@ if [ "$( grep -ic "347" /etc/passwd )" -eq 0 ]; then
 fi
 
 # Update file permissions of scripts
-chmod +0755 $DOCROOT/scripts/*
-chmod +0755 /etc/rc.d/rc.lldpd
+chmod 755 $DOCROOT/scripts/*
+chmod 755 /etc/rc.d/rc.lldpd
 
 # Copy the default configuration file
 cp -n $DOCROOT/default.cfg $BOOT/ulldpd.cfg >/dev/null 2>&1
