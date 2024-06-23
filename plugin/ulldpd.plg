@@ -77,8 +77,8 @@ fi
 
 echo ""
 echo "-------------------------------------------------------------"
-echo " LLDP for UNRAID (&version;) has been installed."
-echo " Copyright 2023 - &author;"
+echo " LLDP for UNRAID has been installed."
+echo " Version: &version; / Plugin Maintainer: &author;"
 echo "-------------------------------------------------------------"
 echo ""
 </INLINE>
@@ -98,8 +98,8 @@ rm -rf &emhttp;
 
 echo ""
 echo "-----------------------------------------------------------"
-echo " LLDP for UNRAID (&version;) has been removed."
-echo " Copyright 2023 - &author;"
+echo " LLDP for UNRAID has been removed."
+echo " Version: &version; / Plugin Maintainer: &author;"
 echo "-----------------------------------------------------------"
 echo ""
 </INLINE>
