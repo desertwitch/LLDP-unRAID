@@ -18,6 +18,8 @@
 
 <CHANGES>
 ## LLDP for UNRAID
+###2024.08.07
+- new: switched from legacy to more recent update checking mechanism
 ###2024.04.15
 - fix: only propagate LLDP information on physical network interfaces (eth*) instead of all network interfaces
 ###2024.03.11

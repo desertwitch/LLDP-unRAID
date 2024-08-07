@@ -190,12 +190,8 @@ $(function() {
 
     showStatus('lldpd');
 
-    // dynamix plugin update api
-    <?if (function_exists('plugin_update_available') && $version = plugin_update_available('ulldpd')):?>
-        showNotice('LLDP <?=htmlspecialchars($version);?> available. <a>Update</a>','ulldpd');
-        $('#user-notice a').on('click', function () {
-        $('#user-notice').empty();
-    });
-    <?endif;?>
+    if ( typeof caPluginUpdateCheck === "function" ) {
+        caPluginUpdateCheck("ulldpd.plg",{name:"LLDP"});
+    }
 });
 </script>
