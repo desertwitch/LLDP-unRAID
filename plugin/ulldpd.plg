@@ -3,14 +3,14 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ulldpd">
 <!ENTITY author    "desertwitch">
-<!ENTITY version   "2024.08.07">
+<!ENTITY version   "2024.09.12">
 <!ENTITY launch    "Settings/ULLDPDsettings">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/LLDP-unRAID/main">
 <!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
 <!ENTITY pkgURL    "&gitURL;/packages">
 <!ENTITY plgPATH   "/boot/config/plugins/&name;">
-<!ENTITY plgNAME   "ulldpd-2024.08.07-x86_64-1">
-<!ENTITY plgMD5    "5c899b360ce757f615d165e495f8b7af">
+<!ENTITY plgNAME   "ulldpd-2024.09.12-x86_64-1">
+<!ENTITY plgMD5    "f6177af47d421454b0b41c51d9f18e35">
 <!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
 ]>
 
