@@ -25,9 +25,15 @@ if [ "$( grep -ic "347" /etc/passwd )" -eq 0 ]; then
     useradd -d /run/lldpd -s /bin/false -u 347 -g _lldpd _lldpd >/dev/null 2>&1
 fi
 
+# Copy the default configuration file
+cp -n $DOCROOT/default.cfg $BOOT/ulldpd.cfg >/dev/null 2>&1
+
+# set up plugin-specific polling tasks
+rm -f /etc/cron.daily/lldp-poller >/dev/null 2>&1
+ln -sf /usr/local/emhttp/plugins/ulldpd/scripts/poller /etc/cron.daily/lldp-poller >/dev/null 2>&1
+chmod +x /etc/cron.daily/lldp-poller >/dev/null 2>&1
+/etc/cron.daily/lldp-poller conntest >/dev/null 2>&1 &
+
 # Update file permissions of scripts
 chmod 755 $DOCROOT/scripts/*
 chmod 755 /etc/rc.d/rc.lldpd
-
-# Copy the default configuration file
-cp -n $DOCROOT/default.cfg $BOOT/ulldpd.cfg >/dev/null 2>&1

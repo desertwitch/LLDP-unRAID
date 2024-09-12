@@ -18,6 +18,10 @@
 
 <CHANGES>
 ## LLDP for UNRAID
+###2024.09.12
+- fix: made optical changes regarding wording, positioning and helptexts on the LLDP Settings page
+- fix: improved script security by handling of leading and trailing whitespaces in configurational values
+- new: use of plugin usage metric functions to aid development of new features and planning for plugin updates (toggleable)
 ###2024.08.07
 - new: switched from legacy to more recent update checking mechanism
 ###2024.04.15
@@ -36,6 +40,7 @@ stop already existing services before doing anything
 <INLINE>
 echo "Making sure all existing LLDP services are stopped (before install/upgrade)..."
 killall lldpd >/dev/null 2>&amp;1
+killall lldp-poller >/dev/null 2>&amp;1
 echo ""
 exit 0
 </INLINE>
@@ -93,10 +98,13 @@ definition for uninstallation of the plugin
 <INLINE>
 echo "Making sure all existing LLDP instances are stopped (before uninstall)..."
 killall lldpd >/dev/null 2>&amp;1
+killall lldp-poller >/dev/null 2>&amp;1
 
 removepkg &plgPATH;/*.txz
 rm -rf &plgPATH;
 rm -rf &emhttp;
+
+rm -f /etc/cron.daily/lldp-poller >/dev/null 2>&amp;1
 
 echo ""
 echo "-----------------------------------------------------------"
