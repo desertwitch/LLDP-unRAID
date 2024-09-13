@@ -32,7 +32,6 @@ cp -n $DOCROOT/default.cfg $BOOT/ulldpd.cfg >/dev/null 2>&1
 rm -f /etc/cron.daily/lldp-poller >/dev/null 2>&1
 ln -sf /usr/local/emhttp/plugins/ulldpd/scripts/poller /etc/cron.daily/lldp-poller >/dev/null 2>&1
 chmod +x /etc/cron.daily/lldp-poller >/dev/null 2>&1
-/etc/cron.daily/lldp-poller conntest >/dev/null 2>&1 &
 
 # Update file permissions of scripts
 chmod 755 $DOCROOT/scripts/*

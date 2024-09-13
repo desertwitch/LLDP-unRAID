@@ -3,14 +3,14 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ulldpd">
 <!ENTITY author    "desertwitch">
-<!ENTITY version   "2024.09.12">
+<!ENTITY version   "2024.09.13">
 <!ENTITY launch    "Settings/ULLDPDsettings">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/LLDP-unRAID/main">
 <!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
 <!ENTITY pkgURL    "&gitURL;/packages">
 <!ENTITY plgPATH   "/boot/config/plugins/&name;">
-<!ENTITY plgNAME   "ulldpd-2024.09.12-x86_64-1">
-<!ENTITY plgMD5    "f6177af47d421454b0b41c51d9f18e35">
+<!ENTITY plgNAME   "ulldpd-2024.09.13-x86_64-1">
+<!ENTITY plgMD5    "233f640fbe9a65abb4265c39572ba9de">
 <!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
 ]>
 
@@ -18,6 +18,8 @@
 
 <CHANGES>
 ## LLDP for UNRAID
+###2024.09.13
+- important fix: address possible flock condition causing installation script to stall (thanks AgentXXL)
 ###2024.09.12
 - fix: made optical changes regarding wording, positioning and helptexts on the LLDP Settings page
 - fix: improved script security by handling of leading and trailing whitespaces in configurational values
@@ -82,6 +84,7 @@ if [ "$SERVICE" == "enable" ]; then
     /etc/rc.d/rc.lldpd start
 fi
 
+/etc/cron.daily/lldp-poller conntest >/dev/null 2>&amp;1 &amp;
 echo ""
 echo "-------------------------------------------------------------"
 echo " LLDP for UNRAID has been installed."
