@@ -18,6 +18,8 @@
 
 <CHANGES>
 ## LLDP for UNRAID
+###2025.01.24
+- new: updated from lldpd-1.0.18 to lldpd-1.0.19
 ###2024.09.16
 - fix: reworked bash scripts to better standards with more safety for strange configurational states
 ###2024.09.13
@@ -53,9 +55,9 @@ exit 0
 <!--
 install or upgrade dependency files
 -->
-<FILE Name="&plgPATH;/lldpd-1.0.18-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
-<URL>&pkgURL;/lldpd-1.0.18-x86_64-1.txz</URL>
-<MD5>8a990c707220e8aa2970dc11f2321223</MD5>
+<FILE Name="&plgPATH;/lldpd-1.0.19-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
+<URL>&pkgURL;/lldpd-1.0.19-x86_64-1.txz</URL>
+<MD5>2ef85c3f6a1d7677ee57502e7d6fafb7</MD5>
 </FILE>
 
 <!--
