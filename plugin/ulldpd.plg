@@ -18,6 +18,8 @@
 
 <CHANGES>
 ## LLDP for UNRAID
+###2025.02.26
+- fix: future-proofing changes to base plugin structure
 ###2025.01.24
 - new: updated from lldpd-1.0.18 to lldpd-1.0.19
 ###2024.09.16
@@ -88,7 +90,6 @@ if [ "$SERVICE" == "enable" ]; then
     /etc/rc.d/rc.lldpd start
 fi
 
-/etc/cron.daily/lldp-poller conntest >/dev/null 2>&amp;1 &amp;
 echo ""
 echo "-------------------------------------------------------------"
 echo " LLDP for UNRAID has been installed."
