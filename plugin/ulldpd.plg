@@ -18,6 +18,8 @@
 
 <CHANGES>
 ## LLDP for UNRAID
+###2026.02.11
+- new: updated from lldpd-1.0.19 to lldpd-1.0.20
 ###2025.08.21
 - fix: make pages and dashboards compliant with new responsive UI
 ###2025.02.26
@@ -59,9 +61,9 @@ exit 0
 <!--
 install or upgrade dependency files
 -->
-<FILE Name="&plgPATH;/lldpd-1.0.19-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
-<URL>&pkgURL;/lldpd-1.0.19-x86_64-1.txz</URL>
-<MD5>2ef85c3f6a1d7677ee57502e7d6fafb7</MD5>
+<FILE Name="&plgPATH;/lldpd-1.0.20-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
+<URL>&pkgURL;/lldpd-1.0.20-x86_64-1.txz</URL>
+<MD5>550505eabac620d33c44501ca364dd81</MD5>
 </FILE>
 
 <!--
